@@ -8,11 +8,14 @@
 </head>
 <body>
     
-<header id="vue-instance">
+<header class="intro" id="vue-instance">
      
-  <section class="startWindow" v-if="isLoggedIn">
+  <section class="introWindow" v-if="isLoggedIn">
       <h2>Witaj {{name}}</h2>
-      <button @click="login" type="submit">Wróć</button>
+      <p class="introText">Jest to moja pierwsza strona z uzyciem vue.js. Zapraszam Cię do poznania jego możliwości oraz moich umiejętności związanych z jego użyciem</p>
+      <ul>
+        <li v-for="href in hrefs"><a v-bind:href="href.url">{{href.name}}</a></li>
+      </ul>
   </section>
      
   <section class="startWindow" v-else>
@@ -30,7 +33,11 @@
     el: '#vue-instance',
     data: {
         isLoggedIn: false,
-        name: ""
+        name: "",
+        hrefs:[
+            {name: "Gra- znajdź liczbę", url: "play1.html"},
+            //{name: "Soon", url: "#"},
+        ]
     },
     methods:{
         login: function(){

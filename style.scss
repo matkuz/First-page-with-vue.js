@@ -1,3 +1,4 @@
+@import "others.scss";
 *{
 	margin:0;
 	padding:0;
@@ -18,49 +19,133 @@ a, a:visited {
 a:hover{
 	text-decoration:none;
 }
+h2{
+    font-size: 5rem;
+}
+
 
 header{
-    position: relative;
-    height: 100vh;
+    &.intro{
+        min-height: 100vh;
+        width: 100%;
+        background-color: #98dafc;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .startWindow{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            input{
+                height: 50px;
+                width: 50%;
+                border: 2px solid #fff;
+                margin: 30px 0;
+                text-align: center;
+                font-size: 2rem;
+                outline: none;
+                transition: all 0.3s;
+                &:focus{
+                    border: 2px solid #e05038;
+                }
+            }
+            button{
+                background-color: #e6af4b;
+                border: none;
+                width: 30%;
+                padding: 15px;
+                color: #fff;
+                cursor: pointer;
+                transition: all 0.3s;
+                &:hover{
+                    background-color: #e05038;
+                }
+            }
+            .introText{
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+        .introWindow{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .introText{
+                font-size: 2rem;
+                text-align: center;
+                padding: 15px;
+            }
+            ul{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                li{
+                    a{
+                        display: flex;
+                        align-content: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        background-color: #e05038;
+                        width: 300px;
+                        height: 150px;
+                        text-decoration: none;
+                        color: #fff;
+                        text-align: center;
+                        margin: 20px;
+                        font-size: 2rem;
+                        transition: all 0.3s;
+                        &:hover{
+                            opacity: 0.6;    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.playWindow{
+    min-height: 100vh;
     width: 100%;
     background-color: #98dafc;
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    .startWindow{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h2{
-            font-size: 5rem;
-        }
-        input{
-            height: 50px;
-            width: 50%;
-            border: 2px solid #fff;
-            margin: 30px 0;
-            text-align: center;
-            font-size: 2rem;
-            outline: none;
-            transition: all 0.3s;
-            &:focus{
-                border: 2px solid #e05038;
-            }
-        }
-        button{
-            background-color: #e6af4b;
-            border: none;
-            width: 30%;
-            padding: 15px;
-            color: #fff;
-            cursor: pointer;
-            transition: all 0.3s;
-            &:hover{
-                background-color: #e05038;
-            }
+    h3{
+        font-size: 2rem;
+        text-align: center;
+        padding: 15px;
+    }
+    input{
+        height: 60px;
+        width: 60px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 2rem;
+        border: 5px solid transition;
+        outline: none;
+    }
+    p{
+        font-size: 2rem;
+        margin: 15px 0;
+    }
+    button{
+        background-color: #e6af4b;
+        border: none;
+        width: 30%;
+        padding: 15px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover{
+            background-color: #e05038;
         }
     }
 }

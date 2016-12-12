@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game 1</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h2>Gra 1</h2>
+    </header>
+  <section id="vue-instance" class="playWindow">
+      <h3>Znajdź liczbę 0-10</h3>
+      <input v-model="userNumber" type="text"/>
+      <p>{{message}}</p>
+      <button v-on:click="newNumber">Nowa liczba</button>
+  </section>
+ 
+     
+
+<script src="http://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+
+<script>
+  var vm = new Vue({
+    el: '#vue-instance',
+    data: {
+            userNumber: 0,
+            randomNumber: 5
+        },
+        methods: {
+            getRandomNumber: function(min, max){
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            },
+            newNumber: function(){
+                this.randomNumber = this.getRandomNumber(1, 10);
+            }
+        },
+        computed: {
+            message: function(){
+                if (this.userNumber == this.randomNumber){
+                    return 'Udało się!';
+                } if(this.userNumber > this.randomNumber){
+                    return 'Za dużo';
+                }else{
+                    return 'Za mało';
+                }
+            }
+        }
+  });
+</script>
+</body>
+</html>
